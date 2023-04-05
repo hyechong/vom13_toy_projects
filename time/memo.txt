@@ -1,0 +1,29 @@
+완성 사이트 : https://www.dabipyeung.com/step7/
+
+참고 사이트 :
+- 제이쿼리 : https://jquery.com/
+- 구글폰트 : https://fonts.google.com/
+
+/* 헤더 제원 :
+- 로고 : 가로 90 세로 80
+- 위치 : 위에서 30, 옆에서 60
+- 글씨 : 사이즈 14 색 #555
+- sns : 사이즈 18 색 #555
+- sns 링크 : 
+<i class="fa fa-facebook"> 
+<i class="fa fa-twitter"> 
+<i class="fa fa-envelope">  */
+
+<하단 모드박스>
+좌우간격 : 120
+bottom : 70px
+사이 간격 : 5%
+투명도 : 흰색 0.6
+폰트사이즈 : 12px
+박스패딩 : 20px 30px 
+
+<중간 큰 글씨>
+타이틀 텍스트 : 50px, color:#666
+서브 텍스트 : 14, color:#333
+왼쪽 간격 : 120
+위 아래 간격 : 화면 중앙 

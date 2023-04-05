@@ -1,0 +1,30 @@
+/* 전체 화면 스타일 */
+#wrap{position: fixed; top: 0; left: 0; width: 100%; height: 100%; min-width: 1400px; min-height: 780px; background-image: url(../img/bg_morning.jpg); background-size: cover; display: flex; justify-content: space-between;}
+
+/* min-width:1400 - 최소 가로 사이즈 1400px : 1400보다 가로 화면이 작으면 요소 가려짐 */
+/* min-height:780 - 최소 가로 사이즈 780px : 780보다 세로 화면이 작으면 요소 가려짐 */
+
+/* logo */
+#wrap h1{width: 90px; height: 80px; background: url(../img/logo_b.png) no-repeat left top; background-size: contain; text-indent: -9999px;}
+
+/* Header Style */
+header{width: 100%; height: auto; position: fixed; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; padding: 30px 120px;}
+.navs{display: flex; column-gap: 50px;}
+.navs .gnb{display: flex; column-gap: 30px;}
+.navs .gnb a{font-size: 14px; color: #555;}
+.navs .sns{display: flex; column-gap: 20px;}
+.navs .sns a{font-size: 18px; color: #555;}
+
+/* 하단 Box Style */
+.box{width: 100%; height: auto; position: fixed; bottom: 70px; display: flex; align-items: center; padding: 0 120px; column-gap: 1%;}
+.box div{width: 25%; background: rgba(255,255, 255, .6); padding: 10px 30px; transition: all .5s;}
+.box div a{color: #555;}
+
+.box div:hover{background-color: black;}
+.box div:hover a{color: #fff;}
+
+/* 중간 텍스트 */
+.txt{width: 100%; height: auto; position: fixed; left: 120px; top: 50%; transform: translateY(-50%);}
+.txt .title{font-size: 50px; color: #666; display: flex; column-gap: 10px;}
+.txt p {font-size: 50px; color: #111;}
+.txt .sub{font-size: 14px; color: #333;}
