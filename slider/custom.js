@@ -6,7 +6,9 @@
 // 요소 선택
 const slWrapper = document.querySelector('.slider-wrapper');
 const imgs = document.querySelector('.imgs');
-const img = document.querySelectorAll('img');
+const img = document.querySelectorAll('.slimg');
+const navigators = document.querySelectorAll('.navigator a');
+const indicators = document.querySelectorAll('.dot');
 
 // 초기화 변수
 let currentIdx = 0;
@@ -16,6 +18,10 @@ let timer;
 const startSlider = (eq) => {
   imgs.style.left = -100 * eq + '%';
   currentIdx = eq;
+  indicators.forEach((indicator) => {
+    indicator.classList.remove('active');
+  });
+  indicators[currentIdx].classList.add('active');
 };
 
 // 특정 시간 간격으로 슬라이더 이동 함수 정의
@@ -28,7 +34,7 @@ const startTimer = () => {
     // (3 + 1) % 4 = 0
 
     startSlider(sliderLoop);
-  }, 2000);
+  }, 4000);
 };
 
 //슬라이더 멈추는 함수
@@ -48,6 +54,60 @@ slWrapper.addEventListener('mouseleave', () => {
 
 // 특정 시간 간격으로 슬라이더 이동 함수 호출
 startTimer();
+
+// 네비게이터 기능
+navigators.forEach((navigator) => {
+  navigator.addEventListener('click', function (e) {
+    e.preventDefault(); // 태그의 기본 이벤트를 멈춤 ex. a태그의 링크연결 기능 꺼줌
+    if (this.getAttribute('class') === 'prev') {
+      if (currentIdx === 0) {
+        // startSlider(img.length - 1); // 마지막 페이지로 이동
+        return false; // 기능을 멈춤
+      } else {
+        startSlider(currentIdx - 1);
+      }
+    } else {
+      if (currentIdx === img.length - 1) {
+        // startSlider(0); // 첫 페이지로 이동
+        return false; // 기능을 멈춤
+      } else {
+        startSlider(currentIdx + 1);
+      }
+    }
+  });
+});
+
+// 인디케이터 클릭 이벤트
+indicators.forEach((indicator, idx) => {
+  indicator.addEventListener('click', function () {
+    startSlider(idx);
+  });
+});
+
+// const activateIndicator = (e) => {
+//   const targetIndicator = e.currentTarget;
+//   indicators.forEach((dot) => {
+//     dot.classList.remove('active');
+//   });
+//   targetIndicator.classList.add('active');
+// };
+
+// indicators.forEach((dot) => {
+//   dot.addEventListener('click', activateIndicator);
+// });
+
+// function activeIndicator(i) {
+//   indicators.forEach((indicator) => {
+//     indicator.classList.remove('active');
+//   });
+//   indicators[i].classList.add('active');
+// }
+
+// indicators.forEach((indicator, idx) => {
+//   indicator.addEventListener('click', function () {
+//     activeIndicator(idx);
+//   });
+// });
 
 // 슬라이더 기능 함수 호출
 //startSlider(3);
