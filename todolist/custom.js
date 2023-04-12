@@ -16,14 +16,14 @@ let liContent = '';
 // alertTxt 함수 정의
 const alertTxt = () => {
   alert.style.display = 'block';
-  const alertElement = document.createElement('p'); // p 태그 생성
-  alertElement.append('일정을 입력해 주세요.'); // p 태그에 텍스트 추가
-  alert.append(alertElement); // 텍스트가 추가된 p 태그를 div 태그 내부에 추가
+  // const alertElement = document.createElement('p'); // p 태그 생성
+  // alertElement.append('일정을 입력해 주세요.'); // p 태그에 텍스트 추가
+  alert.textContent = '일정을 입력해 주세요.'; // div 태그 내부에 textContent 추가
 
   setTimeout(() => {
     alert.style.display = 'none';
-    alertElement.remove();
-  }, 1000); // 2초 후 메시지 사라짐
+    // alertElement.remove();
+  }, 2000); // 2초 후 메시지 사라짐
 };
 
 // todo list 생성 함수 정의
